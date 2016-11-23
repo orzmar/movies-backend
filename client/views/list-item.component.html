@@ -1,0 +1,25 @@
+<div  ng-transclude style="margin-top:15px">
+	<div class="col-xs-3">
+		<span>
+			<input type="text" ng-model="vm.movie.name" ng-disabled="vm.disabled"/>
+		</span>
+	</div>
+	<div class="col-xs-2">
+		<input type="text" ng-model="vm.movie.year" ng-disabled="vm.disabled"/>
+	</div>
+	<div class="col-xs-2">
+		<div ng-repeat="actor in vm.movie.cast | orderBy: '-name'">
+			<input type="text" ng-model="actor" ng-disabled="vm.disabled"/>
+		</div>
+	</div>
+	<div class="col-xs-2">
+		<input type="text" ng-model="vm.movie.director" ng-disabled="vm.disabled"/>
+	</div>
+
+	<div class="col-xs-3">
+		<button ng-show="!vm.editMode" ng-click="vm.editItem(vm.movie.id)">Edit</button>
+		<button ng-show="vm.editMode" ng-click="vm.save()">Save</button>
+		<button ng-click="vm.viewItem(vm.movie.id)">View</button>
+		<button ng-click="vm.delete(vm.movie.id)">Delete</button>
+	</div>
+</div>

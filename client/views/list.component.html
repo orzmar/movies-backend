@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-xs-3">
+    <label><h5>Name</h5></label>
+  </div>
+  <div class="col-xs-2">
+    <label><h5>Year</h5></label>
+  </div>
+  <div class="col-xs-2">
+    <label><h5>Cast</h5></label>
+  </div>
+  <div class="col-xs-3">
+    <label><h5>Director</h5></label>
+  </div>
+  <div class="col-xs-2">
+    <label>
+      <h5>Actions</h5>
+      <a ng-link="['Add']"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+    </label>
+  </div>
+</div>
+<div class="row" ng-repeat="movie in vm.movies | orderBy: 'name'" ng-transclude>
+    <list-item movie=movie></list-item>
+</div>
+<div>
+  <ng-outlet></ng-outlet>  
+</div>

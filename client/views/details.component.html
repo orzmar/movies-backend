@@ -1,0 +1,13 @@
+<h3>Movie: {{vm.movie.name}}</h3>
+<div>
+  <label>Director: </label>
+  <span>{{vm.movie.director}}</span>
+</div>
+<div>
+  <label>Cast:</label>
+  <ul>
+    <li ng-repeat="actor in vm.movie.cast">
+      {{actor}}
+    </li>
+  </ul>
+</div>
