@@ -8,9 +8,7 @@
 		<input type="text" ng-model="vm.movie.year" ng-disabled="vm.disabled"/>
 	</div>
 	<div class="col-xs-2">
-		<div ng-repeat="actor in vm.movie.cast | orderBy: '-name'">
-			<input type="text" ng-model="actor" ng-disabled="vm.disabled"/>
-		</div>
+		<input placeholder="List of actors" name="cast" ng-model="vm.movie.cast" ng-list ng-disabled="vm.disabled">
 	</div>
 	<div class="col-xs-2">
 		<input type="text" ng-model="vm.movie.director" ng-disabled="vm.disabled"/>

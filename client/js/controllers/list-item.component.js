@@ -34,11 +34,10 @@
 			vm.save = function() {
 				vm.disabled = true;
 				vm.editMode = false;
-
 				vm.movie
 					.$save()
 					.then(function(movie) {
-						console.log(movie);
+						$window.location.reload();
 					});
 			}
 
